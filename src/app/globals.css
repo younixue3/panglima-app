@@ -1,27 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+    body {
+        @apply bg-emerald-800 font-outfit
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+    .bg-primary {
+        @apply bg-emerald-800 hover:bg-emerald-700 text-white
+    }
+    .bg-clear {
+        @apply bg-white hover:bg-gray-200 text-emerald-700
+    }
+    .bg-danger {
+        @apply bg-red-600 hover:bg-red-700 text-white
+    }
+    .bg-warning {
+        @apply bg-yellow-500 hover:bg-yellow-700 text-black
+    }
 }
