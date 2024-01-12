@@ -63,7 +63,7 @@ export class NavbarComponent extends Component {
                                 <Link className={'m-auto'} href={'/auth/login'}>
                                     <ButtonComponent text={"Login"} color={'bg-primary'}/>
                                 </Link>
-                                <Link className={'m-auto'} href={'/auth/register'}>
+                                <Link className={'m-auto'} href={'/auth/daftar'}>
                                     <ButtonComponent text={"Daftar"} color={'bg-clear'}/>
                                 </Link>
                             </div>
