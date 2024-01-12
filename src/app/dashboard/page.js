@@ -5,12 +5,13 @@ import {ButtonComponent} from "@/components/Button/ButtonComponent";
 import axios from "axios";
 import {logoutAuth} from "@/form/auth/actions";
 import {flogoutAuth} from "@/form/auth/DaftarForm/sync";
+import {router, useRouter} from "next/navigation";
 
 export default function Login() {
-
-
+    const router = useRouter()
     const onSubmit = async () => {
         await logoutAuth()
+        router.push('/auth/login')
     }
     
     return(

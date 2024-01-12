@@ -11,16 +11,12 @@ import {storeToken} from "@/form/auth/actions";
 import {fstoreToken} from "@/form/auth/DaftarForm/sync";
 import {Router} from "next/navigation";
 import {useRouter} from "next/navigation";
+import {useState} from "react";
 // import {Router, useRouter} from "next/router";
 
 export default function Login() {
+    const [error, setError] = useState('')
     const router = useRouter()
-    // async function authToken(data) {
-    //     'use server'
-    //     cookies().set({
-    //         token: data
-    //     })
-    // }
     function LoginForm() {
 
         const {
@@ -31,11 +27,24 @@ export default function Login() {
         } = useForm()
 
         const OnSubmit = async (data) => {
-            const fest = await axios
-                .post('https://api-nub.friandy.web.id/api/customer/login', data)
+            try {
+                const fest = await axios
+                    .post('https://api-nub.friandy.web.id/api/customer/login', data)
+                await storeToken(fest.data.data.token)
+                router.push('/dashboard')
+            } catch (e) {
+                setError(e.response.data.message)
+            }
+        }
 
-           await storeToken(fest.data.data.token)
-            router.push('/dashboard')
+        const AlertValidation = () => {
+            if (error) {
+                return (
+                    <div className={'col-span-2'}>
+                        <div className={'rounded-lg bg-red-200 text-sm font-light p-3'}>{error}</div>
+                    </div>
+                )
+            }
         }
 
         return (
@@ -49,6 +58,7 @@ export default function Login() {
                             <Link className={'text-blue-400'} href={'/auth/daftar'}>Daftar</Link>
                         </div>
                     </div>
+                    <AlertValidation/>
                     <div className={'col-span-2 h-16'}>
                         <label className={'text-sm font-light text-gray-700'}>Nomor WA</label>
                         <input {...register('whatsapp')}
