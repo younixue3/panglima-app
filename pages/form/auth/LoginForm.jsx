@@ -5,13 +5,16 @@ import Link from "next/link";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import {ButtonComponent} from "../../components/Button/ButtonComponent";
-import {loginHook} from "./DaftarForm/loginHook";
+import {loginHook, postLogin} from "./DaftarForm/loginHook";
+import {useMutation, useQueryClient} from "@tanstack/react-query";
+import axios from "axios";
+import {storeToken} from "./actions";
 
 export function LoginForm() {
     const [error, setError] = useState('')
     const router = useRouter()
 
-    const {mutate} = loginHook()
+    const {mutate} = useMutation(postLogin)
     const {
         register,
         handleSubmit,
@@ -19,12 +22,24 @@ export function LoginForm() {
         formState: { errors },
     } = useForm()
 
+    const mutation = useMutation({
+        mutationFn: (data) => {
+            axios
+                .post('https://api-nub.friandy.web.id/api/customer/login', data)
+                .then((resp) => {
+                    storeToken(resp.data.data.token)
+                })
+                router.push('/dashboard')
+        },
+    })
     const OnSubmit = async (data) => {
-        mutate(data, {
-            onSuccess: (resp) => {
-                console.log(resp)
-            }
-        })
+        mutation.mutate(data)
+        // mutate(data)
+        // useMutation(postLogin, {
+        //     onSuccess: (resp) => {
+        //         console.log(resp)
+        //     }
+        // })
         // try {
         //     const fest = await axios
         //         .post('https://api-nub.friandy.web.id/api/customer/login', data)

@@ -1,8 +1,8 @@
 'use client'
-import {CardComponent} from "@/components/Card/CardComponent";
 import Image from "next/image";
 import Link from "next/link";
-import {DaftarForm} from "@/form/auth/DaftarForm";
+import {CardComponent} from "../../components/Card/CardComponent";
+import {DaftarForm} from "../../form/auth/DaftarForm";
 
 export default function register() {
     return (
