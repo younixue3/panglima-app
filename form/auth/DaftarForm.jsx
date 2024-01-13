@@ -21,7 +21,10 @@ export default function DaftarForm() {
         profession: yup.string(),
         sales_id: yup.number().integer().required(),
         project_id: yup.number().integer().required(),
-        unit_type_id: yup.number().integer().required()
+        unit_type_id: yup.number().integer().required(),
+        whatsapp: yup.number().integer().max(14).required(),
+        password: yup.string().min(8).required(),
+        password_confirmation: yup.string().min(8).required()
     });
 
     const {
