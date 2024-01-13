@@ -3,8 +3,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faBoxes, faHome, faNewspaper, faSignOut} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import {router, useRouter} from "next/navigation";
-import {logoutAuth} from "../form/auth/actions";
-import {ButtonComponent} from "../components/Button/ButtonComponent";
+import ButtonComponent from "../../components/Button/ButtonComponent";
+import {logoutAuth} from "../../form/auth/actions";
 
 export default function Login() {
     const router = useRouter()

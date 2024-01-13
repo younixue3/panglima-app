@@ -1,8 +1,8 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import {CardComponent} from "../../components/Card/CardComponent";
-import {DaftarForm} from "../../form/auth/DaftarForm";
+import CardComponent from "../../../components/Card/CardComponent";
+import DaftarForm from "../../../form/auth/DaftarForm";
 
 export default function register() {
     return (

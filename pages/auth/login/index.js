@@ -1,8 +1,8 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import {CardComponent} from "../../components/Card/CardComponent";
-import {LoginForm} from "../../form/auth/LoginForm";
+import CardComponent from "../../../components/Card/CardComponent";
+import LoginForm from "../../../form/auth/LoginForm";
 
 export default function Login() {
     return (
