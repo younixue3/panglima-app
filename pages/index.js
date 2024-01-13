@@ -1,3 +1,5 @@
+import {NavbarComponent} from "./components/Layout/NavbarComponent";
+
 export default function Home() {
     return (
         <div>
@@ -159,9 +161,6 @@ export default function Home() {
 
 import Image from "next/image";
 
-import {NavbarComponent} from "@/components/Layout/NavbarComponent";
-import {ButtonComponent} from "@/components/Button/ButtonComponent";
-import {CardComponent} from "@/components/Card/CardComponent";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faBuildingColumns, faBullseye, faHandshakeSimple,
@@ -170,5 +169,7 @@ import {
     faMoneyBillWheat, faScroll, faStar,
     faTriangleExclamation
 } from "@fortawesome/free-solid-svg-icons";
-import {CtaComponent} from "@/components/Cta/CtaComponent";
-import {FooterComponent} from "@/components/Layout/FooterComponent";
+import {ButtonComponent} from "./components/Button/ButtonComponent";
+import {CardComponent} from "./components/Card/CardComponent";
+import {CtaComponent} from "./components/Cta/CtaComponent";
+import {FooterComponent} from "./components/Layout/FooterComponent";

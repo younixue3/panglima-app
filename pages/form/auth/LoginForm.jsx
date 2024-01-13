@@ -1,20 +1,17 @@
-'use client'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faGoogle, faWindows} from "@fortawesome/free-brands-svg-icons";
-import {ButtonComponent} from "@/components/Button/ButtonComponent";
 import {useForm} from "react-hook-form";
 import Link from "next/link";
-import axios from "axios";
-import {router} from "next/client";
-import Cookies from 'react-cookie';
-import {cookies} from "next/headers";
+import {useState} from "react";
+import {useRouter} from "next/navigation";
+import {ButtonComponent} from "../../components/Button/ButtonComponent";
+import {loginHook} from "./DaftarForm/loginHook";
 
-export function LoginForms() {
-    async function authToken(data) {
-        cookies().set({
-            token: data
-        })
-    }
+export function LoginForm() {
+    const [error, setError] = useState('')
+    const router = useRouter()
+
+    const {mutate} = loginHook()
     const {
         register,
         handleSubmit,
@@ -22,19 +19,31 @@ export function LoginForms() {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => {
-        axios
-            .post('https://api-nub.friandy.web.id/api/customer/login', data)
-            .catch((e) => console.log(e))
-            .then((resp) => {
-                authToken(resp.data.token)
-                router.push('/dashboard')
-            })
+    const OnSubmit = async (data) => {
+        mutate(data)
+        // try {
+        //     const fest = await axios
+        //         .post('https://api-nub.friandy.web.id/api/customer/login', data)
+        //     await storeToken(fest.data.data.token)
+        //     router.push('/dashboard')
+        // } catch (e) {
+        //     setError(e.response.data.message)
+        // }
+    }
+
+    const AlertValidation = () => {
+        if (error) {
+            return (
+                <div className={'col-span-2'}>
+                    <div className={'rounded-lg bg-red-200 text-sm font-light p-3'}>{error}</div>
+                </div>
+            )
+        }
     }
 
     return (
         <>
-            <form id={'loginForm'} name={'loginForm'} onSubmit={handleSubmit(onSubmit)}
+            <form id={'loginForm'} name={'loginForm'} onSubmit={handleSubmit(OnSubmit)}
                   className={'grid grid-cols-2 gap-4'}>
                 <h1 className={'text-3xl font-bold'}>Login</h1>
                 <div className={'text-xs w-full h-full flex'}>
@@ -43,6 +52,7 @@ export function LoginForms() {
                         <Link className={'text-blue-400'} href={'/auth/daftar'}>Daftar</Link>
                     </div>
                 </div>
+                <AlertValidation/>
                 <div className={'col-span-2 h-16'}>
                     <label className={'text-sm font-light text-gray-700'}>Nomor WA</label>
                     <input {...register('whatsapp')}

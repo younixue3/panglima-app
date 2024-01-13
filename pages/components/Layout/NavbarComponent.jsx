@@ -1,8 +1,8 @@
 "use client"
 import React, {Component} from "react";
-import {ButtonComponent} from "@/components/Button/ButtonComponent";
 import Image from "next/image";
 import Link from "next/link";
+import {ButtonComponent} from "../Button/ButtonComponent";
 
 export class NavbarComponent extends Component {
     constructor() {

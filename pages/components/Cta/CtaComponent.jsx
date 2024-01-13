@@ -1,7 +1,7 @@
 'use client'
 import React, {Component} from "react";
 import Image from "next/image";
-import {ButtonComponent} from "@/components/Button/ButtonComponent";
+import {ButtonComponent} from "../Button/ButtonComponent";
 export class CtaComponent extends Component {
     render() {
         return (
