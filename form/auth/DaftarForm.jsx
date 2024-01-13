@@ -14,6 +14,7 @@ import * as yup from "yup";
 
 export default function DaftarForm() {
     const schema = yup.object({
+        id_number: yup.string().min(16),
         name: yup.string().required(),
         email: yup.string(),
         province_id: yup.number().integer().required(),
@@ -22,9 +23,9 @@ export default function DaftarForm() {
         sales_id: yup.number().integer().required(),
         project_id: yup.number().integer().required(),
         unit_type_id: yup.number().integer().required(),
-        whatsapp: yup.number().integer().max(14).required(),
-        password: yup.string().min(8).required(),
-        password_confirmation: yup.string().min(8).required()
+        whatsapp: yup.string().max(13).required(),
+        password: yup.string().required(),
+        password_confirmation: yup.string().required()
     });
 
     const {
@@ -54,8 +55,8 @@ export default function DaftarForm() {
             axios
                 .post('https://api-nub.friandy.web.id/api/customer/register', data)
                 .then((resp) => {
-                    // console.log(resp)
-                    window.location = resp.data.data.transaction.data.payment_url
+                    console.log(resp)
+                    // window.location = resp.data.data.transaction.data.payment_url
                 })
         },
     })
