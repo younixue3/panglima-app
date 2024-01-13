@@ -55,8 +55,8 @@ export default function DaftarForm() {
             axios
                 .post('https://api-nub.friandy.web.id/api/customer/register', data)
                 .then((resp) => {
-                    console.log(resp)
-                    // window.location = resp.data.data.transaction.data.payment_url
+                    // console.log(resp)
+                    window.location = resp.data.data.transaction.data.payment_url
                 })
         },
     })
