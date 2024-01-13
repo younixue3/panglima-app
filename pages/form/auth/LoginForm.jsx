@@ -20,7 +20,11 @@ export function LoginForm() {
     } = useForm()
 
     const OnSubmit = async (data) => {
-        mutate(data)
+        mutate(data, {
+            onSuccess: (resp) => {
+                console.log(resp)
+            }
+        })
         // try {
         //     const fest = await axios
         //         .post('https://api-nub.friandy.web.id/api/customer/login', data)
