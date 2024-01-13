@@ -24,6 +24,7 @@ export function LoginForm() {
 
     const mutation = useMutation({
         mutationFn: (data) => {
+            console.log(data)
             axios
                 .post('https://api-nub.friandy.web.id/api/customer/login', data)
                 .then((resp) => {
