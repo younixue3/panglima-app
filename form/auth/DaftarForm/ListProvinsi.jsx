@@ -3,13 +3,13 @@ import axios from "axios";
 
 const queryClient = new QueryClient()
 
-export function ListMarketing() {
-    function GetMarketing() {
+export default function ListProvinsi() {
+    function GetProvinsi() {
         const {isLoading, error, data, isFetching} = useQuery({
             queryKey: ['repoData'],
             queryFn: () =>
                 axios
-                    .get('https://api-nub.friandy.web.id/api/get-marketings')
+                    .get('https://api-nub.friandy.web.id/api/get-province')
                     .then((resp) => resp.data),
         })
 
@@ -30,7 +30,7 @@ export function ListMarketing() {
     return (
         <>
             <QueryClientProvider client={queryClient}>
-                <GetMarketing/>
+                <GetProvinsi/>
             </QueryClientProvider>
         </>
     )

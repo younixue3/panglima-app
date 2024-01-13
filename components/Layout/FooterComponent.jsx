@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, {Component} from "react";
 
-export class FooterComponent extends Component {
+export default class FooterComponent extends Component {
     render() {
         return (
             <footer className="bg-white border-t-2">

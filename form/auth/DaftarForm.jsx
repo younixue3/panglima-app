@@ -1,21 +1,18 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faGoogle, faWindows} from "@fortawesome/free-brands-svg-icons";
 import {useForm} from "react-hook-form";
 import Link from "next/link";
 import {useState} from "react";
 import {useMutation} from "@tanstack/react-query";
 import axios from "axios";
-import {storeToken} from "./actions";
-import {ListKota} from "./DaftarForm/ListKota";
-import {ListProvinsi} from "./DaftarForm/ListProvinsi";
-import {ListMarketing} from "./DaftarForm/ListMarketing";
-import {ListProject} from "./DaftarForm/ListProject";
-import {ListUnit} from "./DaftarForm/ListUnit";
-import {ButtonComponent} from "../../components/Button/ButtonComponent";
+import ListKota from "./DaftarForm/ListKota";
+import ListProvinsi from "./DaftarForm/ListProvinsi";
+import ListMarketing from "./DaftarForm/ListMarketing";
+import ListProject from "./DaftarForm/ListProject";
+import ListUnit from "./DaftarForm/ListUnit";
+import ButtonComponent from "../../components/Button/ButtonComponent";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-export function DaftarForm() {
+export default function DaftarForm() {
     const schema = yup.object({
         name: yup.string().required(),
         email: yup.string(),

@@ -1,6 +1,6 @@
 "use client"
 import React, {Component} from "react";
-export class ButtonComponent extends Component {
+export default class ButtonComponent extends Component {
     constructor() {
         super();
         this.state = {

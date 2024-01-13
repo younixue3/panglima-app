@@ -1,8 +1,8 @@
 'use client'
 import React, {Component} from "react";
 import Image from "next/image";
-import {ButtonComponent} from "../Button/ButtonComponent";
-export class CtaComponent extends Component {
+import ButtonComponent from "../Button/ButtonComponent";
+export default class CtaComponent extends Component {
     render() {
         return (
             <div className={'w-full sm:p-10 bg-yellow-green'}>

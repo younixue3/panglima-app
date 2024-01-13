@@ -2,9 +2,9 @@
 import React, {Component} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {ButtonComponent} from "../Button/ButtonComponent";
+import ButtonComponent from "../Button/ButtonComponent";
 
-export class NavbarComponent extends Component {
+export default class NavbarComponent extends Component {
     constructor() {
         super();
         this.state = {

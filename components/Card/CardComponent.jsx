@@ -1,6 +1,6 @@
 'use client'
 import React, {Component} from "react";
-export class CardComponent extends Component {
+export default class CardComponent extends Component {
     render() {
         return (
             <div className={"shadow-md bg-white border rounded-lg"}>

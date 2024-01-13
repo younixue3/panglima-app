@@ -4,13 +4,13 @@ import {useForm} from "react-hook-form";
 import Link from "next/link";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
-import {ButtonComponent} from "../../components/Button/ButtonComponent";
+import ButtonComponent from "../../components/Button/ButtonComponent";
 import {loginHook, PostLogin} from "./DaftarForm/loginHook";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import axios from "axios";
 import {storeToken} from "./actions";
 
-export function LoginForm() {
+export default function LoginForm() {
     const [error, setError] = useState('')
     const router = useRouter()
 

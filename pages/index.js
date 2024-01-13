@@ -1,4 +1,4 @@
-import {NavbarComponent} from "./components/Layout/NavbarComponent";
+import NavbarComponent from "../components/Layout/NavbarComponent";
 
 export default function Home() {
     return (
@@ -169,7 +169,7 @@ import {
     faMoneyBillWheat, faScroll, faStar,
     faTriangleExclamation
 } from "@fortawesome/free-solid-svg-icons";
-import {ButtonComponent} from "./components/Button/ButtonComponent";
-import {CardComponent} from "./components/Card/CardComponent";
-import {CtaComponent} from "./components/Cta/CtaComponent";
-import {FooterComponent} from "./components/Layout/FooterComponent";
+import ButtonComponent from "../components/Button/ButtonComponent";
+import CardComponent from "../components/Card/CardComponent";
+import CtaComponent from "../components/Cta/CtaComponent";
+import FooterComponent from "../components/Layout/FooterComponent";

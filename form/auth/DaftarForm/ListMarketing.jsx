@@ -3,13 +3,13 @@ import axios from "axios";
 
 const queryClient = new QueryClient()
 
-export function ListKota(provinsi) {
-    function GetKota() {
+export default function ListMarketing() {
+    function GetMarketing() {
         const {isLoading, error, data, isFetching} = useQuery({
             queryKey: ['repoData'],
             queryFn: () =>
                 axios
-                    .get(`https://api-nub.friandy.web.id/api/get-province/${provinsi.provinsi}`)
+                    .get('https://api-nub.friandy.web.id/api/get-marketings')
                     .then((resp) => resp.data),
         })
 
@@ -19,7 +19,7 @@ export function ListKota(provinsi) {
 
         return (
             <>
-                {data.data.cities.map((item, key) => {
+                {data.data.map((item, key) => {
                     return (
                         <option value={item.id} key={key}>{item.name}</option>
                     )
@@ -30,7 +30,7 @@ export function ListKota(provinsi) {
     return (
         <>
             <QueryClientProvider client={queryClient}>
-                <GetKota/>
+                <GetMarketing/>
             </QueryClientProvider>
         </>
     )

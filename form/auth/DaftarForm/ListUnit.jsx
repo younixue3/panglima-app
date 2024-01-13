@@ -3,7 +3,7 @@ import axios from "axios";
 
 const queryClient = new QueryClient()
 
-export function ListUnit(project) {
+export default function ListUnit(project) {
     function GetUnit() {
         const {isLoading, error, data, isFetching} = useQuery({
             queryKey: ['repoData'],
