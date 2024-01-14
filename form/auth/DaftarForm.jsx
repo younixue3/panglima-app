@@ -17,12 +17,12 @@ export default function DaftarForm() {
         id_number: yup.string().max(16),
         name: yup.string().required('Masukkan nama'),
         email: yup.string(),
-        province_id: yup.number().integer().required('Pilih provinsi'),
-        city_id: yup.number().integer().required('Pilih kota'),
+        province_id: yup.number().integer().min(1, 'Pilih provinsi').required('Pilih provinsi'),
+        city_id: yup.number().integer().min(1, 'Pilih kota').required('Pilih kota'),
         profession: yup.string(),
-        sales_id: yup.number().integer().required('Pilih nama sales'),
-        project_id: yup.number().integer().required('Pilih projek'),
-        unit_type_id: yup.number().integer().required('Pilih tipe unit'),
+        sales_id: yup.number().integer().min(1, 'Pilih nama sales').required('Pilih nama sales'),
+        project_id: yup.number().integer().min(1, 'Pilih projek').required('Pilih projek'),
+        unit_type_id: yup.number().integer().min(1, 'Pilih tipe unit').required('Pilih tipe unit'),
         whatsapp: yup.string().max(13).required('Masukkan nomor whatsapp'),
         password: yup.string().required('Masukkan password'),
         password_confirmation: yup.string().required('Masukkan konfirmasi password')
@@ -128,7 +128,7 @@ export default function DaftarForm() {
                         className={'text-xs text-red-500'}>*</span></label>
                     <select value={watch('city_id')} {...register('city_id')}
                             className={'w-full border text-md px-1.5 pt-2 pb-1.5 text-gray-800 rounded-md peer outline-none border-b-2 focus:border-b-4 border-b-yellow-500/ focus:border-b-yellow-500/100 transition-all ease-in-out'}>
-                        <option>Pilih Kota</option>
+                        <option value={0}>Pilih Kota</option>
                         {watch('province_id') && watch('province_id') !== '0' ? (
                             <ListKota provinsi={watch('province_id')}/>) : ''}
                     </select>
@@ -162,7 +162,7 @@ export default function DaftarForm() {
                         className={'text-xs text-red-500'}>*</span></label>
                     <select value={watch('sales_id')} {...register('sales_id')}
                             className={'w-full border text-md px-1.5 pt-2 pb-1.5 text-gray-800 rounded-md peer outline-none border-b-2 focus:border-b-4 border-b-yellow-500/ focus:border-b-yellow-500/100 transition-all ease-in-out'}>
-                        <option>Pilih Nama Marketing</option>
+                        <option value={0}>Pilih Nama Marketing</option>
                         <ListMarketing/>
                     </select>
                     <div className={'text-red-700 text-xs'}>{errors.sales_id?.message}</div>
@@ -183,7 +183,7 @@ export default function DaftarForm() {
                     <select disabled={watch('project_id') && watch('project_id') !== '0' ? '' : 'disabled'}
                             value={watch('unit_type_id')} {...register('unit_type_id')}
                             className={'w-full border text-md px-1.5 pt-2 pb-1.5 text-gray-800 rounded-md peer outline-none border-b-2 focus:border-b-4 border-b-yellow-500/ focus:border-b-yellow-500/100 transition-all ease-in-out'}>
-                        <option>Pilih Unit</option>
+                        <option value={0}>Pilih Unit</option>
                         {watch('project_id') && watch('project_id') !== '0' ? (
                             <ListUnit project={watch('project_id')}/>) : ''}
                     </select>
