@@ -57,16 +57,16 @@ export default function Home() {
                 className={'grid grid-cols-2 sm:grid-cols-6 place-content-center p-5 px-5 sm:px-20 gap-5 bg-white'}>
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
-                        <div className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
+                        <div className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon icon={faMoneyBillWheat}/>
                         </div>
-                        <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
+                        <h3 className={'text-sm sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
                             Riba</h3>
                     </div>
                 </CardComponent>
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
-                        <div className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
+                        <div className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon icon={faBuildingColumns}/>
                         </div>
                         <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
@@ -75,7 +75,7 @@ export default function Home() {
                 </CardComponent>
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
-                        <div className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
+                        <div className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon icon={faHouseLock}/>
                         </div>
                         <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
@@ -84,7 +84,7 @@ export default function Home() {
                 </CardComponent>
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
-                        <div className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
+                        <div className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon icon={faMoneyBillTrendUp}/>
                         </div>
                         <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
@@ -93,7 +93,7 @@ export default function Home() {
                 </CardComponent>
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
-                        <div className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
+                        <div className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon icon={faTriangleExclamation}/>
                         </div>
                         <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
@@ -103,7 +103,7 @@ export default function Home() {
                 <CardComponent>
                     <div className={'p-1 sm:p-5'}>
                         <div
-                            className={'h-10 w-10 sm:h-20 sm:w-20 rounded-full flex m-auto bg-primary p-2 sm:p-5'}>
+                            className={'h-10 w-10 text-4xl text-center sm:h-20 sm:w-20 rounded-full flex m-auto bg-primary p-2 sm:p-5'}>
                             <FontAwesomeIcon className={'m-auto'} icon={faHandshakeSimple}/>
                         </div>
                         <h3 className={'text-xs sm:text-xl uppercase mt-3 text-black font-semibold text-center'}>Tanpa
@@ -115,8 +115,8 @@ export default function Home() {
             <div className={'grid grid-cols-1 sm:grid-cols-3 pb-5 sm:pb-0 bg-white px-10 gap-4'}>
                 <div
                     className={'p-5 sm:p-10 z-10 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-900 hover:from-emerald-500 hover hover:to-emerald-900 hover:scale-110 text-white transition-all duration-300'}>
-                    <div className={'h-14 w-14 sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
-                        <FontAwesomeIcon icon={faBullseye}/>
+                    <div className={'h-14 w-14 text-5xl text-center sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
+                        <FontAwesomeIcon className={'m-auto'} icon={faBullseye}/>
                     </div>
                     <h3 className={'text-xl sm:text-3xl font-bold leading-10 mt-3'}>Vision</h3>
                     <p className={'leading-4 sm:leading-7 text-xs sm:text-base font-light mt-5'}>
@@ -126,8 +126,8 @@ export default function Home() {
                 </div>
                 <div
                     className={'p-5 sm:p-10 z-10 bg-gradient-to-b from-emerald-600 via-emerald-700 to-emerald-900 hover:from-emerald-500 hover hover:to-emerald-900 hover:scale-110 text-white transition-all duration-300\''}>
-                    <div className={'h-14 w-14 sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
-                        <FontAwesomeIcon icon={faScroll}/>
+                    <div className={'h-14 w-14 text-5xl text-center sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
+                        <FontAwesomeIcon className={'m-auto'} icon={faScroll}/>
                     </div>
                     <h3 className={'text-xl sm:text-3xl font-bold leading-10 mt-3'}>Mission</h3>
                     <ul className={'leading-4 sm:leading-7 text-xs sm:text-base font-light mt-5 list-disc list-inside'}>
@@ -143,8 +143,8 @@ export default function Home() {
                 </div>
                 <div
                     className={'p-5 sm:p-10 z-10 bg-gradient-to-bl from-emerald-600 via-emerald-700 to-emerald-900 hover:from-emerald-500 hover hover:to-emerald-900 hover:scale-110 text-white transition-all duration-300\''}>
-                    <div className={'h-14 w-14 sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
-                        <FontAwesomeIcon icon={faStar}/>
+                    <div className={'h-14 w-14 text-5xl text-center sm:h-20 sm:w-20 rounded-lg flex bg-primary p-2'}>
+                        <FontAwesomeIcon className={'m-auto'} icon={faStar}/>
                     </div>
                     <h3 className={'text-xl sm:text-3xl font-bold leading-10 mt-3'}>Core Value</h3>
                     <p className={'leading-4 sm:leading-7 text-xs sm:text-base font-light mt-5'}>
