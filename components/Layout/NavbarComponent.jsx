@@ -87,7 +87,7 @@ export default class NavbarComponent extends Component {
                             <Link href={'/auth/login'}>
                                 <ButtonComponent text={"Login"} color={'bg-primary'}/>
                             </Link>
-                            <Link href={'/auth/register'}>
+                            <Link href={'/auth/daftar'}>
                                 <ButtonComponent text={"Daftar"} color={'bg-transparent border-2 border-emerald-800'}/>
                             </Link>
                         </div>
