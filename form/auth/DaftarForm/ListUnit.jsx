@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 export default function ListUnit(project) {
     function GetUnit() {
         const {isLoading, error, data, isFetching} = useQuery({
-            queryKey: ['repoData'],
+            queryKey: ['repoDataUnit'],
             queryFn: () =>
                 axios
                     .get(`https://api-nub.friandy.web.id/api/get-project/${project.project}`)
@@ -29,9 +29,7 @@ export default function ListUnit(project) {
     }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
-                <GetUnit/>
-            </QueryClientProvider>
+            <GetUnit/>
         </>
     )
 }

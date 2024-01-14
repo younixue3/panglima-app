@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 export default function ListMarketing() {
     function GetMarketing() {
         const {isLoading, error, data, isFetching} = useQuery({
-            queryKey: ['repoData'],
+            queryKey: ['repoDataMarketing'],
             queryFn: () =>
                 axios
                     .get('https://api-nub.friandy.web.id/api/get-marketings')
@@ -29,9 +29,7 @@ export default function ListMarketing() {
     }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
-                <GetMarketing/>
-            </QueryClientProvider>
+            <GetMarketing/>
         </>
     )
 }

@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 export default function ListProject() {
     function GetProject() {
         const {isLoading, error, data, isFetching} = useQuery({
-            queryKey: ['repoData'],
+            queryKey: ['repoDataProject'],
             queryFn: () =>
                 axios
                     .get('https://api-nub.friandy.web.id/api/get-project')
@@ -29,9 +29,7 @@ export default function ListProject() {
     }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
-                <GetProject/>
-            </QueryClientProvider>
+            <GetProject/>
         </>
     )
 }

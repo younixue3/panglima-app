@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 export default function ListKota(provinsi) {
     function GetKota() {
         const {isLoading, error, data, isFetching} = useQuery({
-            queryKey: ['repoData'],
+            queryKey: ['repoDataKota'],
             queryFn: () =>
                 axios
                     .get(`https://api-nub.friandy.web.id/api/get-province/${provinsi.provinsi}`)
@@ -29,9 +29,7 @@ export default function ListKota(provinsi) {
     }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
-                <GetKota/>
-            </QueryClientProvider>
+            <GetKota/>
         </>
     )
 }

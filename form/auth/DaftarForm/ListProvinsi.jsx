@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 export default function ListProvinsi() {
     function GetProvinsi() {
         const {isLoading, error, data, isFetching} = useQuery({
-            queryKey: ['repoData'],
+            queryKey: ['repoDataProvinsi'],
             queryFn: () =>
                 axios
                     .get('https://api-nub.friandy.web.id/api/get-province')
@@ -29,9 +29,7 @@ export default function ListProvinsi() {
     }
     return (
         <>
-            <QueryClientProvider client={queryClient}>
-                <GetProvinsi/>
-            </QueryClientProvider>
+            <GetProvinsi/>
         </>
     )
 }
