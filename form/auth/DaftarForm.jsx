@@ -14,7 +14,7 @@ import * as yup from "yup";
 
 export default function DaftarForm() {
     const schema = yup.object({
-        id_number: yup.string().min(16),
+        id_number: yup.string().max(16),
         name: yup.string().required('Masukkan nama'),
         email: yup.string(),
         province_id: yup.number().integer().required('Pilih provinsi'),
@@ -23,7 +23,7 @@ export default function DaftarForm() {
         sales_id: yup.number().integer().required('Pilih nama sales'),
         project_id: yup.number().integer().required('Pilih projek'),
         unit_type_id: yup.number().integer().required('Pilih tipe unit'),
-        whatsapp: yup.string().max(13).required('Masukkan nomor'),
+        whatsapp: yup.string().max(13).required('Masukkan nomor whatsapp'),
         password: yup.string().required('Masukkan password'),
         password_confirmation: yup.string().required('Masukkan konfirmasi password')
     });
